@@ -1,0 +1,86 @@
+.div1{
+    box-shadow: 0px 0px 0px 5px #EDEDED; 
+    width: 30%;
+    position: relative;
+    left: 30%;
+    overflow: hidden;
+    height: 600px;
+    background-color: aliceblue;
+}
+.div1 h2{
+    position: relative;
+    left: 10px;
+    top: 10px;
+    color:rgb(255, 203, 107);
+}
+.div1 h3{
+    color:#1E90FF;
+    position: relative;
+    left: 10px;
+    top: -5px;
+}
+
+
+#div2{
+    width: 100%;
+    background-color: aliceblue;
+    position: relative;
+    top: 200px;
+    height:300px;
+}
+
+#div2 p{
+    letter-spacing: 4px;
+    margin-top: -15px;
+    text-indent: 2em;
+    line-height: 25px;
+    opacity: 0;
+}
+.div1:hover div:nth-child(2){
+    animation:div2 0.5s linear forwards normal;
+
+}
+.div1:hover p{
+    animation: p 0.5s linear forwards normal;
+}
+@keyframes p{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes div2{
+    from{top:200px;}
+    to{top:-80px;}
+}
+#div3{
+    color:gray;
+    font-size: 15px;
+    margin-left: 30px;
+}
+
+#div4{
+    height: 253px;
+    overflow: hidden;
+    text-align: center;
+}
+img{
+    width: 100%;
+    filter: brightness(100%);
+    top:0px;
+    transition: all 0.8s linear;
+    position: relative;
+}
+.div1:hover img{
+   animation: img 0.8s linear forwards;
+   transition: filter;
+}
+@keyframes img{
+    from{filter:brightness(100%);top:0px;}
+    to{filter: brightness(30%);top:-7px;}
+}
+@keyframes bo{
+    from{box-shadow: 0px 0px 0px 5px #EDEDED;}
+    to{box-shadow: 0px 0px 0px 5px #B3B3B3;}
+}
+.div1:hover{
+    animation: bo 0.3s linear forwards normal;
+}

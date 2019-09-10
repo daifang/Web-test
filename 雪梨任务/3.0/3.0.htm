@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./canvas.js"></script>
+    <link rel="icon" href="./3.0.jpg">
+    <style>
+        #fun2{
+            position: relative;
+            border: solid 1px red;
+            top: -370px;
+            left:30%;
+        }
+        #tu{
+            background-image: url(3.0.jpg);
+            background-repeat: no-repeat;
+	        background-position: center 0;
+            margin-left: 30%;
+            width: 799px;
+            height: 411px;
+        }
+        [id ^='p']{
+            position: absolute;
+            left: 43%;
+            font-size: 30px;
+            color: red;
+            top: 80px;
+            border: solid 1px blue;
+        }
+    </style>
+</head>
+<body>
+    <p id="p">当前:0%</p>
+    <h1 style="color:crimson;font-weight:900;margin-left: 43%;font-size: 50px;" id="h1">刮刮乐</h1>
+    <div id="tu"></div>
+    <canvas width="799" height="411" id="fun2"></canvas>
+</body>
+    <script>
+        
+        var fun2 = document.getElementById('fun2');
+        var ctx2 = fun2.getContext('2d');
+        var aa = ctx2.getImageData(0,0,799,411).data;
+        console.log(aa);
+        //console.log(window.devicePixelRatio);1.25
+        //设置事件 鼠标每移动一下 就画出一个 ⚪ ，destination-out 属性
+        rec(ctx2);//画 矩形 
+        fun2.addEventListener('mousedown',function(event){
+            mouse = true;//true 代表 鼠标按下
+            fun2.addEventListener('mousemove',function fun1(event){move(ctx2,event,fun2)})
+        })
+        fun2.addEventListener('mouseup',function(){
+            mouse = false;//false 代表 鼠标抬起
+        })
+    </script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        mark{
+            background-color:honeydew;
+            font-size: 14px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="GET">
+            <input type="search" name="one" id="one" placeholder="请输入要搜查的商品">
+            <input type="button" value="搜索" id="btn" name="btn"><br>
+            <a id="a" style="cursor: pointer;font-size: 10px;color:red;">清空历史记录</a>
+            <p>最近搜查</p>
+
+    </form>
+    
+
+    <script>
+        document.getElementById('a').onclick = function clear(){
+            if(window.confirm('点击确定删除所有搜索记录'))
+            {
+                localStorage.clear();
+                alert('刷新页面浏览记录将消失');
+            }
+        }   
+            document.getElementById('btn').onclick = function Add(){
+            one = document.getElementById('one').value;
+            localStorage.setItem(localStorage.length,one);
+        }
+        window.onload = function history(){
+            var History,text,mark;
+            for(var i = 0 ; i < localStorage.length ; i++ )
+            {
+                History = localStorage.getItem(i);
+                text = document.createTextNode(History);
+                mark = document.createElement('mark');
+                mark.style.marginLeft = 10+"px";
+                mark.appendChild(text);
+                document.body.appendChild(mark);
+            }
+        }
+    </script>
+
+</body>
+</html>

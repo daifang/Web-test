@@ -1,0 +1,202 @@
+
+#whiteNav{
+    background-color: white;
+}
+.white{
+    margin-right: 10px;
+}
+#blackNav{
+    height: 0;
+}
+.black{
+    color:black;
+}
+.input-group-addon:first-child{
+    border-radius: 10px 0px 0px 10px; 
+    width:80px;
+}
+.input-group-addon:last-child{
+    border-radius: 0px 10px 10px 0px;
+    width:80px;
+}
+
+.carSpan h3,p{
+    color: whitesmoke;
+}
+
+#buleCar h3{
+    color: white;
+}
+#buleCar button{
+    color: white;
+    background-color: #19386e;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 150px;
+    height:40px;
+    margin-top: 30px;
+}
+@media screen and (min-width:100px) and (max-width:790px){
+    hr{
+        display: block;
+    }
+   .wayTitle{
+    text-align: left;
+    border-left: 4px solid orange;
+    height: 100px;
+    line-height: 100px;
+    padding-left: 5px;
+   }
+    #all{
+        background-color: #f5f5f5;
+    }
+    .smNone{
+        display: none;
+    }
+    #blackNav{
+        display: none;
+    }
+    #logo{
+        margin-left: 10px;
+    }
+    #dangerBtn{
+        position: absolute;
+        display: block;
+        top: 15px;
+        right: 70px;
+    }
+    #logo{
+        margin-left: 5px;
+    }
+    #car{
+        display: none;
+    }
+    .form-control{
+        height: 40px;
+        width: 400px;
+    }
+    #bus{
+        margin-top: 50px;
+        width: 100%;
+        background-color:white;
+        height: 200px;
+    }
+    #bus button{
+        border-radius: 5px;
+        border:1px solid grey;
+        background-color: white;
+        width: 100px;
+        height: 30px;
+        margin-top: 30px;
+    }
+    #myCarousel{
+        height: 160px;
+    }
+    #buleCar{
+        display: none;
+    }
+    #car{
+        display: none;
+    }
+    #SmBuleCar{
+        text-align: center;
+        margin-top: 50px;
+    }
+    #visaTitle{
+        text-align: left;
+        border-left: 4px solid orange;
+        height: 100px;
+        line-height: 100px;
+    }
+}
+@media screen and (min-width:790px) and (max-width:1920px){
+    #visa1{
+        
+    }
+    
+    .bgNone{
+        display: none;
+    }
+    hr{
+        display: none;
+    }
+    #visaTitle{
+        text-align: center;
+    }
+    #SmBuleCar{
+        display: none;
+    }
+    #search{
+        position: relative;
+        left: 23%;
+        top:-100px;
+    }
+    .form-control{
+        height: 60px;
+    }
+    .smallNav{
+        display: none;
+    }
+    #dangerBtn{
+        display: none;
+    }
+    #logo{
+        margin-left: 25%;
+        margin-top: -10px;
+    }
+    .navNode{
+        font-size: 18px;
+        width: 105px;
+        height: 50px;
+        margin-top: -15px;
+        text-align: center;
+        border-radius: 10px;
+    }
+    .navNode:hover{
+        transition: border-bottom 0.3s linear;
+    }
+    .navNode:first-child{
+        margin-left: 130px;
+    }
+
+    .form-control::placeholder{
+        font-size: 20px;
+    }
+    .input-group{
+        width:600px;
+        height: 60px;
+    }
+    #bus{
+        width: 100%;
+        margin-top: -50px;
+    }
+    #buleCar{
+        background-color: #19386e;
+        height: 365px;
+        text-align: center;
+        width:200px;
+    }
+    #buleCar img{
+        margin-top: 60px;
+    }
+    #buleCar h3{
+        margin-top: 20px;
+    }
+    #car{
+        margin-left: 10%;
+        background: url(../img/Sbanner2.jpg) no-repeat;
+        height:400px;
+    }
+    .carSpan{
+        float:right;
+    }
+    #way{
+        margin-left: 130px;
+    }
+    #all{
+        width: 100%;
+        background-color: #dddddd;
+        margin-top: 180px;
+    }      
+
+}

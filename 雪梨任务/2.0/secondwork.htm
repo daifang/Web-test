@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" manifest="b.appcache">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简单Web留言本1.0.0</title>
+
+</head>
+<body>
+    <h1>简单Web留言本</h1>
+    <form action="#" method="POST">
+            <textarea name="Storage" id="S" cols="40" rows="5"></textarea><br>
+            <input type="button" name="add" id="add" value="添加">
+            <input type="button" value="全部清除" id="rm" name="rm"><br>
+    </form>
+
+    
+</body>
+<script>
+    //添加key项目，并把value和key放入表格中，达到留言簿的功能
+    var table = document.createElement("table");
+    table.border="1";
+    document.getElementById('add').onclick = function add (){
+        var Write = document.getElementById('S').value;
+        var time = getNowTime();
+        localStorage.setItem(time,Write);
+        var tr = document.createElement('tr');
+        var td1 = document.createElement('td');
+        var td2 = document.createElement('td');
+        var key = document.createTextNode(time);
+        var value = document.createTextNode(localStorage.getItem(time));
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        td1.appendChild(value);
+        td2.appendChild(key);
+        table.appendChild(tr);
+        document.body.appendChild(table);
+    }
+
+    window.onload = function table (){
+        i = localStorage.length;
+        var j;
+        var table = document.createElement("table");
+        table.id="table";
+        table.border="1";
+        for(j=0;j<i;j++)
+        {
+            var tr = document.createElement('tr');
+            var td1 = document.createElement('td');
+            var td2 = document.createElement('td');
+            var key = document.createTextNode(localStorage.key(j));
+            var value = document.createTextNode(localStorage.getItem(localStorage.key(j)));
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            td1.appendChild(value);
+            td2.appendChild(key);
+            table.appendChild(tr);
+        }
+        document.body.appendChild(table);
+    }
+
+
+
+    //               《失败1.0.0》
+    // window.onload = function table(){
+    //     i = localStorage.length;
+    //     var j;
+    //     document.write('<table>');
+    //     for(j=0;j<i;j++)
+    //     {
+    //         document.write('<tr>');
+    //         document.write("<td>"+localStorage.getItem(localStorage.key(j))+"</td>");
+    //         document.write('<td>'+localStorage.key(j)+'</td>');
+    //         document.write("</tr>");
+    //     }
+
+    // }
+    //点击确定后清除所有储存信息
+    document.getElementById('rm').onclick = function removeAll(){
+        if(window.confirm())
+        {
+            localStorage.clear();
+            
+        }
+    }
+
+    //获取当前日期时间
+    function getNowTime(){
+        var Time = new Date();
+        //星期
+        var x = Time.getDay();
+        var str;
+        switch(x){
+            case 1:{
+                str = "Mon";
+                break;
+            }
+            case 2:{
+                str = 'Tues';
+                break;
+            }
+            case 3:{
+                str = 'Wed';
+                break;
+            }
+            case 4:{
+                str = 'Thur';
+                break;
+            }
+            case 5:{
+                str = 'Friday';
+                break;
+            }
+            case 6:
+            case 7:{
+                str = 'Weekend';
+            }
+        }
+        str = str+","+Time.getFullYear()+"年"+Time.getMonth()+'月'+Time.getDate()+"日  "+Time.getHours()+':'+Time.getMinutes()+':'+Time.getSeconds();
+
+        return str;
+    }
+</script>
+</html>
